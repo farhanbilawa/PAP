@@ -1,3 +1,16 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from keras.models import Sequential
+from keras.layers import Dense
+from google.colab import files
+uploaded = files.upload()
+
+
+data = pd.read_csv('brca.csv')
+
 # Separate features and target variable
 X = data.drop(columns=['y'])
 y = data['y']
